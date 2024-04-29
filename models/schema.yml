@@ -2,24 +2,42 @@ version: 2
 
 models:
   - name: jdb_choco_stg
+    description: Results (1/2) from web scraping (Jeff de Bruges website, chocolates section)
     columns:
       - name: product_name
+        description: Primary key
         tests:
           - unique
           - not_null
 
   - name: jdb_choco2_stg
+    description: Results (2/2) from web scraping (Jeff de Bruges website, chocolates section)
     columns:
       - name: product_name
+        description: Primary key
         tests:
           - unique
           - not_null
   
   - name: jdb_chocolates
+    description: Jeff de Bruges dataset, chocolates section. One product per row.
     columns:
       - name: product_name
+        description: Primary key. Name of the product.
         tests:
           - unique
           - not_null
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_url
+        description: url link of the product page
+      - name: product_price
+        description: price of the product, in euros
+      - name: product_weight_g
+        description: weight (in grams) of the product
+      - name: category
+        description: product category
+      - name: subcategory
+        description: product sub-category
             
       

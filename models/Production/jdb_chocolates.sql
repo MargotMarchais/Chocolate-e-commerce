@@ -13,7 +13,7 @@ WITH base AS (
 )
 
 SELECT 
-    'Chocolate' AS CATEGORY,
+    'Chocolate' AS category,
     CASE 
         WHEN UPPER(product_name) LIKE '%TABLETTE%' THEN 'Tablette'
         WHEN UPPER(product_name) LIKE '%CREME%GLACEE%' THEN 'Creme glacee'
@@ -26,6 +26,6 @@ SELECT
         WHEN UPPER(product_name) LIKE '%BALLOTIN%' THEN 'Ballotin'
         WHEN UPPER(product_name) LIKE '%BOITE%' THEN 'Boite'
         ELSE 'Autres'
-    END AS SUB_CATEGORY,
+    END AS subcategory,
     base.*
 FROM base
