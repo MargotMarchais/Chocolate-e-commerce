@@ -3,23 +3,13 @@
     -- Create categories and subcategories of product
 
 WITH base AS (
-    SELECT 
-        product_name, 
-        image_url, 
-        product_url, 
-        price AS product_price,
-        weight_grams AS product_weight_g
-    FROM `dbt-chocolate-project.dbt_chocolate_setup.jdb_choco` 
+    SELECT *
+    FROM {{ref("jdb_choco_stg")}} 
 
     UNION DISTINCT
 
-    SELECT 
-        product_name, 
-        image_url, 
-        product_url, 
-        price AS product_price_euros,
-        weight_grams AS product_weight_g
-    FROM `dbt-chocolate-project.dbt_chocolate_setup.jdb_choco2` 
+    SELECT *
+    FROM {{ref("jdb_choco2_stg")}}
 )
 
 SELECT 
