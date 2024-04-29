@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 SELECT 
     product_name, 
     image_url, 
