@@ -4,7 +4,7 @@
   )
 }}
 
-SELECT 
+SELECT DISTINCT
     product_name, 
     image_url, 
     product_url, 

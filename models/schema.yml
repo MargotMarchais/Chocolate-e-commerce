@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: jdb_choco_stg
+    columns:
+      - name: product_name
+        tests:
+          - unique
+          - not_null
+
+  - name: jdb_choco2_stg
+    columns:
+      - name: product_name
+        tests:
+          - unique
+          - not_null
+  
+  - name: jdb_chocolates
+    columns:
+      - name: product_name
+        tests:
+          - unique
+          - not_null
+            
+      
