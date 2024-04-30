@@ -5,6 +5,7 @@
 }}
 
 SELECT DISTINCT
+    date_photo,
     product_name, 
     image_url, 
     product_url, 

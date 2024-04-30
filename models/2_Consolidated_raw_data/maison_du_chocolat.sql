@@ -1,9 +1,9 @@
 -- Objectives:
-    -- Build a chocolate dataset for Jeff de Bruges (union the 2 datasets derived from web scraping)
-    -- Create categories and subcategories of product
+    -- Create product categories and subcategories
+    -- Explicit the name of the company
 
 SELECT 
-    'Jeff de Bruges' AS company,
+    'Maison du Chocolat' AS company,
     'Chocolate' AS category,
     CASE 
         WHEN UPPER(product_name) LIKE '%TABLETTE%' THEN 'Tablette'
@@ -22,9 +22,7 @@ SELECT
         WHEN UPPER(product_name) LIKE '%AMANDE%' THEN 'Amandes'
         ELSE 'Autres'
     END AS subcategory,
-    regexp_extract(product_url, r'com/([^/$]*)') AS subcategory2,
+    NULL AS subcategory2,
     base.*
-
-FROM {{ref("jeff_de_bruges_stg")}} AS base
-
+FROM {{ref("maison_du_chocolat_stg")}} AS base
 ORDER BY subcategory
