@@ -2,17 +2,8 @@
     -- Build a chocolate dataset for Jeff de Bruges (union the 2 datasets derived from web scraping)
     -- Create categories and subcategories of product
 
-WITH base AS (
-    SELECT *
-    FROM {{ref("jdb_choco_stg")}} 
-
-    UNION DISTINCT
-
-    SELECT *
-    FROM {{ref("jdb_choco2_stg")}}
-)
-
 SELECT 
+    'Jeff de Bruges' AS company,
     'Chocolate' AS category,
     CASE 
         WHEN UPPER(product_name) LIKE '%TABLETTE%' THEN 'Tablette'
@@ -33,5 +24,5 @@ SELECT
     END AS subcategory,
     regexp_extract(product_url, r'com/([^/$]*)') AS subcategory2,
     base.*
-FROM base
+FROM {{ref("jeff_de_bruges_stg")}} AS base
 ORDER BY subcategory

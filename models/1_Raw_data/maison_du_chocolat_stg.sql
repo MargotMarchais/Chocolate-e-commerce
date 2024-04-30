@@ -10,4 +10,4 @@ SELECT DISTINCT
     product_url, 
     price AS product_price,
     weight_grams AS product_weight_g
-FROM `dbt-chocolate-project.dbt_chocolate_setup.jdb_choco` 
+FROM `dbt-chocolate-project.dbt_chocolate_setup.maison_du_chocolat` 
