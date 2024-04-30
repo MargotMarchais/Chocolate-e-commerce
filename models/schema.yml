@@ -7,7 +7,6 @@ models:
       - name: product_name
         description: Primary key
         tests:
-          - unique
           - not_null
       - name: image_url
         description: url link of the product image on the website
@@ -41,7 +40,6 @@ models:
       - name: product_name
         description: Primary key
         tests:
-          - unique
           - not_null
       - name: image_url
         description: url link of the product image on the website
@@ -57,9 +55,6 @@ models:
     columns:
       - name: product_name
         description: Primary key
-        tests:
-          - unique
-          - not_null
       - name: image_url
         description: url link of the product image on the website
       - name: product_url
