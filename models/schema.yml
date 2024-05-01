@@ -63,3 +63,15 @@ models:
         description: price of the product, in euros
       - name: product_weight
         description: weight (in grams) of the product
+
+  - name: Chocolates
+    description: Consolidated datasets combining all brands
+    columns:
+      - name: product_name
+        description: Primary key
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_url
+        description: url link of the product page
+      - name: product_price
+        description: price of the product, in euros
