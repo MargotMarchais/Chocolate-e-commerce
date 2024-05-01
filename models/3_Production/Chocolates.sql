@@ -2,6 +2,7 @@
 
 SELECT 
     company,
+    brand,
     category,
     subcategory,
     subcategory2,
@@ -16,6 +17,7 @@ UNION DISTINCT
 
 SELECT 
     company,
+    brand,
     category,
     subcategory,
     subcategory2,
@@ -30,6 +32,7 @@ UNION DISTINCT
 
 SELECT 
     company,
+    brand,
     category,
     subcategory,
     subcategory2,
@@ -44,6 +47,7 @@ UNION DISTINCT
 
 SELECT 
     company,
+    brand,
     category,
     subcategory,
     subcategory2,
@@ -53,3 +57,19 @@ SELECT
     product_weight_g,
     date_photo
 FROM {{ref("maison_du_chocolat")}}
+
+UNION DISTINCT
+
+SELECT 
+    company,
+    brand,
+    category,
+    subcategory,
+    subcategory2,
+    product_name,
+    product_url,
+    product_price,
+    product_weight_g,
+    date_photo
+FROM {{ref("franprix")}}
+WHERE product_name NOT LIKE '%chewing%gum%' -- Franprix dataset contains products not related to chocolate
