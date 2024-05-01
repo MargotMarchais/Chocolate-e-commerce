@@ -4,6 +4,7 @@
 WITH base AS (
 SELECT 
     'Lindt' AS company,
+    'Lindt' AS brand,
    'Chocolat' AS category,
     CASE 
         WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
@@ -71,6 +72,7 @@ FROM {{ref("lindt_stg")}} AS base
 
 SELECT 
     company,
+    brand,
     category,
     CASE
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BO_TE%' THEN 'Boites'

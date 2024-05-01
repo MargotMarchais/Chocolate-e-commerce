@@ -4,6 +4,7 @@
 WITH base AS (
     SELECT 
         'Maison du Chocolat' AS company,
+        'Maison du Chocolat' AS brand,
         'Chocolat' AS category,
         CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
@@ -73,6 +74,7 @@ WITH base AS (
 
 SELECT 
     company,
+    brand,
     category,
     CASE
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BO_TE%' THEN 'Boites'

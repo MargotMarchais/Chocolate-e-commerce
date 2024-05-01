@@ -4,6 +4,7 @@
 WITH base AS (
     SELECT 
         'Jeff de Bruges' AS company,
+        'Jeff de Bruges' AS brand,
         'Chocolat' AS category,
         CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
@@ -66,6 +67,7 @@ WITH base AS (
 
 SELECT 
     company,
+    brand,
     category,
     CASE
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BO_TE%' THEN 'Boites'

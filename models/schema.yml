@@ -4,6 +4,10 @@ models:
   - name: jeff_de_bruges_stg
     description: Web scraping results (Jeff de Bruges website)
     columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+      - name: date_photo
+        description: Date the web scraping took place
       - name: product_name
         description: Primary key
         tests:
@@ -20,6 +24,10 @@ models:
   - name: maison_du_chocolat_stg
     description: Web scraping results (Maison du chocolat website)
     columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+      - name: date_photo
+        description: Date the web scraping took place
       - name: product_name
         description: Primary key
         tests:
@@ -37,6 +45,10 @@ models:
   - name: alain_ducasse_stg
     description: Web scraping results (Alain Ducasse website)
     columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+      - name: date_photo
+        description: Date the web scraping took place
       - name: product_name
         description: Primary key
         tests:
@@ -53,6 +65,10 @@ models:
   - name: lindt_stg
     description: Web scraping results (Lindt website)
     columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+      - name: date_photo
+        description: Date the web scraping took place
       - name: product_name
         description: Primary key
       - name: image_url
@@ -64,9 +80,33 @@ models:
       - name: product_weight
         description: weight (in grams) of the product
 
+  - name: franprix_stg
+    description: Web scraping results (Franprix website)
+    columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+      - name: date_photo
+        description: Date the web scraping took place
+      - name: product_name
+        description: Primary key
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_price
+        description: price of the product, in euros
+      - name: product_weight
+        description: weight (in grams) of the product
+
   - name: Chocolates
     description: Consolidated datasets combining all brands
     columns:
+      - name: date_photo
+        description: date the web scraping to collect the data took place
+      - name: category
+        description: broad product category ('Chocolat' by default)
+      - name: subcategory
+        description: product subcategory based on the product name or its URL
+      - name: subcategory2
+        description: detailed product subcategory based on the product name or its URL
       - name: product_name
         description: Primary key
       - name: image_url
@@ -74,4 +114,11 @@ models:
       - name: product_url
         description: url link of the product page
       - name: product_price
-        description: price of the product, in euros
+        description: price of the product, expressed in euro
+      - name: product_weight_g
+        description: weight of the product, expressed in grams
+      - name: brand
+        description: brand of the product
+      - name: company
+        description: company that distributed the product (e-commerce website). 
+          May differ from the brand information.
