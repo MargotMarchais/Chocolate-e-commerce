@@ -1,6 +1,6 @@
 -- Objective : Create an exhaustive dataset for all chocolate products
 
-/*SELECT 
+SELECT 
     company,
     category,
     subcategory,
@@ -12,7 +12,7 @@
     date_photo
 FROM {{ref("jeff_de_bruges")}}
 
-UNION DISTINCT*/
+UNION DISTINCT
 
 SELECT 
     company,
