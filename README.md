@@ -5,7 +5,7 @@
 makers and distributors in France, and eventually build a comprehensive dataset about the chocolate online market in France.
 
 *<b>Methodology:</b>*
-- Web scraping: I scraped product data for several French e-commerce websites (chocolate section), using Python scrapy and requests libraries.
+- Web scraping: I scraped product data from several French e-commerce websites (chocolate section), using Python scrapy and requests libraries.
 - Python: I build an additional script to: 
     - do some minor transformations to the .csv files resulting from web scraping (data cleaning)
     - automatically load the resulting dataframes in BigQuery using the bigquery.client
