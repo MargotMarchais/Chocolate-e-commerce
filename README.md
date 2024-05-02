@@ -22,6 +22,6 @@ makers and distributors in France, and eventually build a comprehensive dataset 
 - A visual Power BI dashboard
 
 *<b>Technical learnings:</b>* I did this project to help me acquire new skills such as:
-build a datawharehouse in GCP Bigquery, feed this DWH with scraped data automatically thanks to a Python script, 
+build a datawharehouse in GCP Bigquery, automatically feed this DWH with scraped data thanks to a Python script, 
 learn how to use dbt (data transformations, tests and docs generation),... It also made me refresh my web scraping skills (scrapy and requests libraries).
 
