@@ -78,6 +78,8 @@ SELECT
     date_photo
 FROM {{ref("franprix")}}
 -- Franprix dataset contains products not related to chocolate
-WHERE UPPER(brand) NOT IN ('FREEDENT', 'FINI', 'HARIBO', 'TIC TAC', 'CARAMBAR')
-    AND product_name NOT LIKE '%bonbon%'
-    AND product_name NOT LIKE '%chewing%' 
+WHERE UPPER(brand) NOT IN ('FREEDENT', 'FINI', 'HARIBO', 'TIC TAC', 'CARAMBAR', 
+    'HOLLYWOOD', 'AIRWAVES', 'LABEYRIE', 'TETES BRÛLÉES', 'RICOLA', 'VICHY')
+    AND UPPER(product_name) NOT LIKE '%BONBON%'
+    AND UPPER(product_name) NOT LIKE '%CHEWING%'
+     
