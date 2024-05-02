@@ -1,4 +1,4 @@
-# Market study | Chocolate e-commerce French Market
+# Market study | Chocolate e-commerce in France
 
 
 *<b>Executive summary</b>*: My goal for this project was to collect data from various chocolate 
