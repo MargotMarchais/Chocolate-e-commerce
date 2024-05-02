@@ -4,8 +4,8 @@
 WITH base AS (
         
     SELECT 
-        'Alain Ducasse' AS company,
-        'Alain Ducasse' AS brand,
+        'ALAIN DUCASSE' AS company,
+        'ALAIN DUCASSE' AS brand,
         'Chocolat' AS category,
         CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
@@ -32,6 +32,8 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%AMANDE%' THEN 'Fruits secs'
             WHEN UPPER(product_name) LIKE '%NOISETTE%' THEN 'Fruits secs'
             WHEN UPPER(product_name) LIKE '%PISTACHE%' THEN 'Fruits secs'
+            WHEN UPPER(product_name) LIKE '%MOULAGE%' THEN 'Moulage'
+            WHEN UPPER(product_name) LIKE '%OEUF%' THEN 'Moulage'
             ELSE 'Autres'
         END AS subcategory,
         CASE 
@@ -59,6 +61,8 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%AMANDE%' THEN 'Amandes'
             WHEN UPPER(product_name) LIKE '%NOISETTE%' THEN 'Noisettes'
             WHEN UPPER(product_name) LIKE '%PISTACHE%' THEN 'Pistaches'
+            WHEN UPPER(product_name) LIKE '%MOULAGE%' THEN 'Moulage'
+            WHEN UPPER(product_name) LIKE '%OEUF%' THEN 'Oeuf'
             ELSE 'Autres'
         END AS subcategory2,
         base.*
@@ -95,6 +99,8 @@ SELECT
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%AMANDE%' THEN 'Fruits secs'
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%NOISETTE%' THEN 'Fruits secs'
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%PISTACHE%' THEN 'Fruits secs'
+        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%MOULAGE%' THEN 'Moulage'
+        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%OEUF%' THEN 'Moulage'
         ELSE subcategory
     END AS subcategory,
     CASE 
@@ -122,6 +128,8 @@ SELECT
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%AMANDE%' THEN 'Amandes'
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%NOISETTE%' THEN 'Noisettes'
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%PISTACHE%' THEN 'Pistaches'
+        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%MOULAGE%' THEN 'Moulage'
+        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%OEUF%' THEN 'Oeufs'
         ELSE subcategory2
     END AS subcategory2,
     product_name, 
@@ -129,6 +137,7 @@ SELECT
     image_url,
     product_price,
     product_weight_g,
+    CAST(quantity AS float64) AS quantity,
     date_photo
 FROM base
 ORDER BY subcategory

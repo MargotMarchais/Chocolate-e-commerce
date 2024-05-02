@@ -10,6 +10,7 @@ SELECT
     product_url,
     product_price,
     product_weight_g,
+    quantity,
     date_photo
 FROM {{ref("jeff_de_bruges")}}
 
@@ -25,6 +26,7 @@ SELECT
     product_url,
     product_price,
     product_weight_g,
+    quantity,
     date_photo
 FROM {{ref("alain_ducasse")}}
 
@@ -40,6 +42,7 @@ SELECT
     product_url,
     product_price,
     product_weight_g,
+    quantity,
     date_photo
 FROM {{ref("lindt")}}
 
@@ -55,6 +58,7 @@ SELECT
     product_url,
     product_price,
     product_weight_g,
+    quantity,
     date_photo
 FROM {{ref("maison_du_chocolat")}}
 
@@ -70,6 +74,10 @@ SELECT
     product_url,
     product_price,
     product_weight_g,
+    quantity,
     date_photo
 FROM {{ref("franprix")}}
-WHERE product_name NOT LIKE '%chewing%gum%' -- Franprix dataset contains products not related to chocolate
+-- Franprix dataset contains products not related to chocolate
+WHERE UPPER(brand) NOT IN ('FREEDENT', 'FINI', 'HARIBO', 'TIC TAC', 'CARAMBAR')
+    AND product_name NOT LIKE '%bonbon%'
+    AND product_name NOT LIKE '%chewing%' 
