@@ -12,9 +12,9 @@ makers and distributors in France, and eventually build a comprehensive dataset 
 - GCP BigQuery: I created an account and an empty project in GCP.
 - dbt: I created a dbt Cloud project that is connected to my BigQuery project. In this dbt project, I created 3 sections:
     - Bronze (staging): raw data, with few modifications.
-    - Silver (transformations): data with some transformations (new columns, filters, etc)
+    - Silver (transformations): the raw data with some transformations (new columns, filters, etc)
     - Gold (final): final datasets that will be used for analysis.
-      Thanks to dbt, I could 'export' the SQL views and tables to GCP BigQuery. I also managed to create dbt QoD tests and documentation For the intermediate and final outputs. All dbt modifications were saved thanks to dbt-Github.
+      Thanks to dbt, I could 'export' the SQL views and tables to GCP BigQuery. I also managed to create the data lineage, QoD tests and documentation. All dbt modifications were saved thanks to dbt-Github.
 - PowerBI: Finally, I could plug my Gold final datasets to Power BI in order to create a visual overview of the market.
 
 *<b>Final output</b>*
