@@ -12,7 +12,7 @@ WITH base AS (
         image_url, 
         product_url, 
         price AS product_price,
-        product_weight AS product_weight_g,
+        weight_grams AS product_weight_g,
         DENSE_RANK() OVER (PARTITION BY product_name ORDER BY timestamp_photo DESC) AS RANK_SCRAP
     FROM `dbt-chocolate-project.dbt_chocolate_setup.lindt` 
 )

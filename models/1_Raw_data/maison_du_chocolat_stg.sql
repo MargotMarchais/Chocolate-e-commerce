@@ -12,7 +12,7 @@ WITH base AS (
         image_url, 
         product_url, 
         price AS product_price,
-        product_weight AS product_weight_g,
+        weight_grams AS product_weight_g,
         quantity,
         rating,
         product_description,

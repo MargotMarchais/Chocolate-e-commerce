@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: jeff_de_bruges_stg
+  - name: jeff_de_bruges
     description: Web scraping results (Jeff de Bruges website)
     columns:
       - name: timestamp_photo
@@ -21,7 +21,7 @@ models:
       - name: product_weight_g
         description: weight (in grams) of the product
 
-  - name: maison_du_chocolat_stg
+  - name: maison_du_chocolat
     description: Web scraping results (Maison du chocolat website)
     columns:
       - name: timestamp_photo
@@ -42,7 +42,7 @@ models:
       - name: product_weight_g
         description: weight (in grams) of the product
 
-  - name: alain_ducasse_stg
+  - name: alain_ducasse
     description: Web scraping results (Alain Ducasse website)
     columns:
       - name: timestamp_photo
@@ -62,7 +62,7 @@ models:
       - name: product_weight_g
         description: weight (in grams) of the product
 
-  - name: lindt_stg
+  - name: lindt
     description: Web scraping results (Lindt website)
     columns:
       - name: timestamp_photo
@@ -80,7 +80,7 @@ models:
       - name: product_weight
         description: weight (in grams) of the product
 
-  - name: franprix_stg
+  - name: franprix
     description: Web scraping results (Franprix website)
     columns:
       - name: timestamp_photo
@@ -97,7 +97,7 @@ models:
         description: weight (in grams) of the product
 
   - name: Chocolates
-    description: Consolidated datasets combining all brands
+    description: Consolidated datasets combining all e-commerce websites and brands
     columns:
       - name: date_photo
         description: date the web scraping to collect the data took place
