@@ -19,6 +19,16 @@ WITH base AS (
     FROM `dbt-chocolate-project.dbt_chocolate_setup.alain_ducasse` 
 )
 
-SELECT *
+SELECT 
+    timestamp_photo,
+    date_photo,
+    REGEXP_REPLACE(NORMALIZE(product_name, NFD), r"\pM", '') AS product_name,
+    product_subname,
+    image_url, 
+    product_url, 
+    product_price,
+    product_weight_g,
+    quantity,
+    RANK_SCRAP
 FROM base
 WHERE RANK_SCRAP = 1
