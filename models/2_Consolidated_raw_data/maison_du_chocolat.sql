@@ -98,7 +98,8 @@ WITH base AS (
         quantity,
         rating,
         product_description,
-        date_photo
+        date_photo,
+        ID_scraping
     FROM {{ref("maison_du_chocolat_stg")}} 
 )
 
@@ -193,5 +194,6 @@ SELECT
     CAST(quantity AS float64) AS quantity,
     rating,
     product_description,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM base

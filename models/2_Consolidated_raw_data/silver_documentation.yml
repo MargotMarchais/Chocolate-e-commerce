@@ -12,9 +12,7 @@ models:
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
-        description: Primary key
-        tests:
-          - not_null
+        description: Name of the product
       - name: company
         description: name of the website where the data were scraped
       - name: brand
@@ -33,6 +31,11 @@ models:
         description: price of the product, in euros
       - name: product_weight_g
         description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
+        tests:
+          - not_null
+          - unique
 
   - name: jeff_de_bruges
     description: Web scraping results (Jeff de Bruges website)
@@ -42,9 +45,7 @@ models:
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
-        description: Primary key
-        tests:
-          - not_null
+        description: Name of the product
       - name: company
         description: name of the website where the data were scraped
       - name: brand
@@ -63,6 +64,11 @@ models:
         description: price of the product, in euros
       - name: product_weight_g
         description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
+        tests:
+          - not_null
+          - unique
 
   - name: maison_du_chocolat
     description: Web scraping results (Maison du chocolat website)
@@ -72,10 +78,7 @@ models:
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
-        description: Primary key
-        tests:
-          - unique
-          - not_null
+        description: Name of the product
       - name: company
         description: name of the website where the data were scraped
       - name: brand
@@ -94,6 +97,11 @@ models:
         description: price of the product, in euros
       - name: product_weight_g
         description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
+        tests:
+          - not_null
+          - unique
 
   - name: lindt
     description: Web scraping results (Lindt website)
@@ -105,7 +113,7 @@ models:
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
-        description: Primary key
+        description: Name of the product
       - name: company
         description: name of the website where the data were scraped
       - name: brand
@@ -124,6 +132,11 @@ models:
         description: price of the product, in euros
       - name: product_weight
         description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
+        tests:
+          - not_null
+          - unique
 
   - name: franprix
     description: Web scraping results (Franprix website)
@@ -135,7 +148,7 @@ models:
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
-        description: Primary key
+        description: Name of the product
       - name: company
         description: name of the website where the data were scraped
       - name: brand
@@ -152,4 +165,73 @@ models:
         description: price of the product, in euros
       - name: product_weight
         description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
+        tests:
+          - not_null
+          - unique
+
+  - name: abtey
+    description: Web scraping results (abtey website)
+    columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+        tests:
+          - not_null
+      - name: date_photo
+        description: Date the web scraping took place
+      - name: product_name
+        description: Name of the product
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product (Abtey by default)
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_price
+        description: price of the product, in euros
+      - name: product_weight
+        description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
+        tests:
+          - not_null
+          - unique
+
+  - name: castelain
+    description: Web scraping results (Chocolat Castelain website)
+    columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+        tests:
+          - not_null
+      - name: date_photo
+        description: Date the web scraping took place
+      - name: product_name
+        description: Name of the product
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product (Chocolat castelain by default)
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_weight
+        description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
+        tests:
+          - not_null
+          - unique
 

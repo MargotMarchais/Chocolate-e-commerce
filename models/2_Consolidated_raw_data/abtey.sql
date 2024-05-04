@@ -103,7 +103,8 @@ WITH base AS (
         discount_percentage,
         discount_amount_text,
         regular_price,
-        regular_price_text
+        regular_price_text,
+        ID_scraping
 
     FROM {{ref("abtey_stg")}} 
 )
@@ -204,5 +205,6 @@ SELECT
     discount_percentage,
     discount_amount_text,
     regular_price,
-    regular_price_text
+    regular_price_text,
+    ID_scraping
 FROM base

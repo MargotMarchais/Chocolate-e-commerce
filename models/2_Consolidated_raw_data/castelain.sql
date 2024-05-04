@@ -111,6 +111,7 @@ WITH base AS (
         saveur,
         teneur_cocoa,
         product_weight_g,
+        ID_scraping,
         RANK_SCRAP
     FROM {{ref("castelain_stg")}}
     )
@@ -212,6 +213,7 @@ SELECT
     link_rewrite,
     format,
     saveur,
-    teneur_cocoa
+    teneur_cocoa,
+    ID_scraping
 FROM base
 ORDER BY subcategory
