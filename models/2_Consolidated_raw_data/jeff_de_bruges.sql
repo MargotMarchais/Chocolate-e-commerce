@@ -6,7 +6,7 @@ WITH base AS (
         'JEFF DE BRUGES' AS company,
         'JEFF DE BRUGES' AS brand,
         'Chocolat' AS category,
-        CASE 
+       CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
             WHEN UPPER(product_name) LIKE '%COFFRET%' THEN 'Boites'
             WHEN UPPER(product_name) LIKE '%SACHET%' THEN 'Boites'
@@ -25,7 +25,6 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%SUCETTE%' THEN 'Sucreries'
             WHEN UPPER(product_name) LIKE '%MARSHMALLOW%' THEN 'Sucreries'
             WHEN UPPER(product_name) LIKE '%OURS%GUIMAUVE%' THEN 'Sucreries'
-            WHEN UPPER(product_name) LIKE '%BILLE%' THEN 'Sucreries'
             WHEN UPPER(product_name) LIKE '%CALISSON%' THEN 'Biscuits'
             WHEN UPPER(product_name) LIKE '%MENDIANT%' THEN 'Biscuits'
             WHEN UPPER(product_name) LIKE '%BISCUIT%' THEN 'Biscuits'
@@ -34,6 +33,7 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%AMANDE%' THEN 'Fruits secs'
             WHEN UPPER(product_name) LIKE '%NOISETTE%' THEN 'Fruits secs'
             WHEN UPPER(product_name) LIKE '%PISTACHE%' THEN 'Fruits secs'
+            WHEN UPPER(product_name) LIKE '%CACAHUETE%' THEN 'Fruits secs'
             WHEN UPPER(product_name) LIKE '%MOULAGE%' THEN 'Moulage'
             WHEN UPPER(product_name) LIKE '%OEUF%' THEN 'Moulage'
             WHEN UPPER(product_name) LIKE '%PEPITE%' THEN 'Autres'
@@ -44,6 +44,8 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%VALENTIN%' THEN 'Collection spéciale'
             WHEN UPPER(product_name) LIKE '%PAQUES%' THEN 'Collection spéciale'
             WHEN UPPER(product_name) LIKE '%MUGUET%' THEN 'Collection spéciale'
+            WHEN UPPER(product_name) LIKE '%KINDER%' THEN 'Snacking'
+            WHEN UPPER(product_name) LIKE '%BILLE%' THEN 'Snacking'
             ELSE 'Autres'
         END AS subcategory,
         CASE 
@@ -63,7 +65,6 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%SORBET%' THEN 'Sorbet'
             WHEN UPPER(product_name) LIKE '%CR_ME%GLAC_E%' THEN 'Crème glacée'
             WHEN UPPER(product_name) LIKE '%SUCETTE%' THEN 'Sucette'
-            WHEN UPPER(product_name) LIKE '%BILLE%' THEN 'Billes'
             WHEN UPPER(product_name) LIKE '%MARSHMALLOW%' THEN 'Marshmallows'
             WHEN UPPER(product_name) LIKE '%OURS%GUIMAUVE%' THEN 'Ours guimauve'
             WHEN UPPER(product_name) LIKE '%CALISSON%' THEN 'Calisson'
@@ -74,6 +75,7 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%AMANDE%' THEN 'Amandes'
             WHEN UPPER(product_name) LIKE '%NOISETTE%' THEN 'Noisettes'
             WHEN UPPER(product_name) LIKE '%PISTACHE%' THEN 'Pistaches'
+            WHEN UPPER(product_name) LIKE '%CACAHUETE%' THEN 'Cacahuetes'
             WHEN UPPER(product_name) LIKE '%MOULAGE%' THEN 'Moulage'
             WHEN UPPER(product_name) LIKE '%OEUF%' THEN 'Oeuf'
             WHEN UPPER(product_name) LIKE '%PEPITE%' THEN 'Pépites'
@@ -84,6 +86,8 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%VALENTIN%' THEN 'Saint-Valentin'
             WHEN UPPER(product_name) LIKE '%PAQUES%' THEN 'Pâques'
             WHEN UPPER(product_name) LIKE '%MUGUET%' THEN 'Muguet'
+            WHEN UPPER(product_name) LIKE '%KINDER%' THEN 'Autres'
+            WHEN UPPER(product_name) LIKE '%BILLE%' THEN 'Billes'
             ELSE 'Autres'
         END AS subcategory2,
         NULL AS quantity,
