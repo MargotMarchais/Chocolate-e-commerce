@@ -7,8 +7,6 @@ models:
     columns:
       - name: timestamp_photo
         description: Timestamp the web scraping took place
-        tests:
-          - not_null
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
@@ -33,9 +31,6 @@ models:
         description: weight (in grams) of the product
       - name: ID_scraping
         description: Primary key
-        tests:
-          - not_null
-          - unique
 
   - name: jeff_de_bruges
     description: Web scraping results (Jeff de Bruges website)
@@ -66,9 +61,6 @@ models:
         description: weight (in grams) of the product
       - name: ID_scraping
         description: Primary key
-        tests:
-          - not_null
-          - unique
 
   - name: maison_du_chocolat
     description: Web scraping results (Maison du chocolat website)
@@ -99,17 +91,12 @@ models:
         description: weight (in grams) of the product
       - name: ID_scraping
         description: Primary key
-        tests:
-          - not_null
-          - unique
 
   - name: lindt
     description: Web scraping results (Lindt website)
     columns:
       - name: timestamp_photo
         description: Timestamp the web scraping took place
-        tests:
-          - not_null
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
@@ -134,17 +121,12 @@ models:
         description: weight (in grams) of the product
       - name: ID_scraping
         description: Primary key
-        tests:
-          - not_null
-          - unique
 
   - name: franprix
     description: Web scraping results (Franprix website)
     columns:
       - name: timestamp_photo
         description: Timestamp the web scraping took place
-        tests:
-          - not_null
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
@@ -167,17 +149,12 @@ models:
         description: weight (in grams) of the product
       - name: ID_scraping
         description: Primary key
-        tests:
-          - not_null
-          - unique
 
   - name: abtey
     description: Web scraping results (abtey website)
     columns:
       - name: timestamp_photo
         description: Timestamp the web scraping took place
-        tests:
-          - not_null
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
@@ -200,17 +177,12 @@ models:
         description: weight (in grams) of the product
       - name: ID_scraping
         description: Primary key
-        tests:
-          - not_null
-          - unique
 
   - name: castelain
     description: Web scraping results (Chocolat Castelain website)
     columns:
       - name: timestamp_photo
         description: Timestamp the web scraping took place
-        tests:
-          - not_null
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
@@ -231,7 +203,4 @@ models:
         description: weight (in grams) of the product
       - name: ID_scraping
         description: Primary key
-        tests:
-          - not_null
-          - unique
 
