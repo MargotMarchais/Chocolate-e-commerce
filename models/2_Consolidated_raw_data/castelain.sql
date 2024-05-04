@@ -47,7 +47,7 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%MUGUET%' THEN 'Collection spéciale'
             WHEN UPPER(product_name) LIKE '%KINDER%' THEN 'Snacking'
             WHEN UPPER(product_name) LIKE '%BILLE%' THEN 'Snacking'
-            ELSE category_name
+            ELSE 'Autres'
         END AS subcategory,
         CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boite'
@@ -89,7 +89,7 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%MUGUET%' THEN 'Muguet'
             WHEN UPPER(product_name) LIKE '%KINDER%' THEN 'Autres'
             WHEN UPPER(product_name) LIKE '%BILLE%' THEN 'Billes'
-            ELSE category_name
+            ELSE 'Autres'
         END AS subcategory2,
         timestamp_photo,
         date_photo,
