@@ -1,0 +1,66 @@
+version: 2
+
+models:
+
+  
+  - name: Chocolates
+    description: Consolidated datasets combining all e-commerce websites and brands
+    columns:
+      - name: date_photo
+        description: date the web scraping to collect the data took place
+        tests:
+          - not_null
+      - name: category
+        description: broad product category ('Chocolat' by default)
+      - name: subcategory
+        description: product subcategory based on the product name or its URL
+      - name: subcategory2
+        description: detailed product subcategory based on the product name or its URL
+      - name: product_name
+        description: Primary key
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_url
+        description: url link of the product page
+      - name: product_price
+        description: price of the product, expressed in euro
+      - name: product_weight_g
+        description: weight of the product, expressed in grams
+      - name: brand
+        description: brand of the product
+      - name: company
+        description: company that distributed the product (e-commerce website). 
+          May differ from the brand information.
+
+  - name: brand_statistics
+    description: A dataset that summarizes information by brand
+    columns:
+      - name: brand
+        description: brand of the product
+      - name: nb_distrib_channels
+        description: Number of websites where a brand sells products (e.g. Lindt sells products on both Franprix.fr and Lindt.fr).
+      - name: nb_products
+        description: Distinct number of product names sold by a brand
+      - name: nb_subcateg
+        description: Number of distinct subcategories (e.g. "tablettes", "glaces",...) sold by a brand
+      - name: nb_subcateg2
+        description: Number of distinct detailed subcategories (e.g. "ballotin", "coffret",...) sold by a brand
+      - name: avg_price_per_kg
+        description: Average price (in €) per kilogram of products sold by a brand
+      - name: min_price_per_kg
+        description: Minimum price (in €) per kilogram of products sold by a brand
+      - name: max_price_per_kg
+        description: Maximum price (in €) per kilogram of products sold by a brand
+      - name: dom_subcategory
+        description: Dominant subcategory of a brand (subcategory with most distinct products)
+      - name: dom_subcateg_nb_products
+        description: Number of distinct products that belong to the brand's dominant subcategory
+      - name: brand_min_price_product
+        description: Minimum price (price at face value, in €)
+      - name: brand_max_price_product
+        description: Maximum price (price at face value, in €)
+      - name: product_min_price
+        description: Product name that has the lowest price
+      - name: product_max_price
+        description: Product name that has the highest price
+  

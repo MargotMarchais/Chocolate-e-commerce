@@ -82,4 +82,37 @@ WHERE UPPER(brand) NOT IN ('FREEDENT', 'FINI', 'HARIBO', 'TIC TAC', 'CARAMBAR',
     'HOLLYWOOD', 'AIRWAVES', 'LABEYRIE', 'TETES BRÛLÉES', 'RICOLA', 'VICHY')
     AND UPPER(product_name) NOT LIKE '%BONBON%'
     AND UPPER(product_name) NOT LIKE '%CHEWING%'
+
+UNION DISTINCT
+
+SELECT 
+    company,
+    brand,
+    category,
+    subcategory,
+    subcategory2,
+    product_name,
+    product_url,
+    product_price,
+    product_weight_g,
+    quantity,
+    date_photo
+FROM {{ref("abtey")}}
+
+UNION DISTINCT
+
+SELECT 
+    company,
+    brand,
+    category,
+    subcategory,
+    subcategory2,
+    product_name,
+    product_url,
+    price_no_reduction AS product_price,
+    product_weight_g,
+    quantity,
+    date_photo
+FROM {{ref("castelain")}}
+     
      

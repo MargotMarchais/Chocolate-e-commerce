@@ -1,6 +1,39 @@
 version: 2
 
 models:
+
+  - name: alain_ducasse
+    description: Web scraping results (Alain Ducasse website)
+    columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+        tests:
+          - not_null
+      - name: date_photo
+        description: Date the web scraping took place
+      - name: product_name
+        description: Primary key
+        tests:
+          - not_null
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product (Alain Ducasse by default)
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_url
+        description: url link of the product page
+      - name: product_price
+        description: price of the product, in euros
+      - name: product_weight_g
+        description: weight (in grams) of the product
+
   - name: jeff_de_bruges
     description: Web scraping results (Jeff de Bruges website)
     columns:
@@ -12,6 +45,16 @@ models:
         description: Primary key
         tests:
           - not_null
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product (Jeff de Bruges by default)
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
       - name: image_url
         description: url link of the product image on the website
       - name: product_url
@@ -33,26 +76,16 @@ models:
         tests:
           - unique
           - not_null
-      - name: image_url
-        description: url link of the product image on the website
-      - name: product_url
-        description: url link of the product page
-      - name: product_price
-        description: price of the product, in euros
-      - name: product_weight_g
-        description: weight (in grams) of the product
-
-  - name: alain_ducasse
-    description: Web scraping results (Alain Ducasse website)
-    columns:
-      - name: timestamp_photo
-        description: Timestamp the web scraping took place
-      - name: date_photo
-        description: Date the web scraping took place
-      - name: product_name
-        description: Primary key
-        tests:
-          - not_null
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product (Maison du Chocolat by default)
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
       - name: image_url
         description: url link of the product image on the website
       - name: product_url
@@ -67,10 +100,22 @@ models:
     columns:
       - name: timestamp_photo
         description: Timestamp the web scraping took place
+        tests:
+          - not_null
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
         description: Primary key
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product (Lindt by default)
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
       - name: image_url
         description: url link of the product image on the website
       - name: product_url
@@ -85,10 +130,22 @@ models:
     columns:
       - name: timestamp_photo
         description: Timestamp the web scraping took place
+        tests:
+          - not_null
       - name: date_photo
         description: Date the web scraping took place
       - name: product_name
         description: Primary key
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
       - name: image_url
         description: url link of the product image on the website
       - name: product_price
@@ -96,29 +153,3 @@ models:
       - name: product_weight
         description: weight (in grams) of the product
 
-  - name: Chocolates
-    description: Consolidated datasets combining all e-commerce websites and brands
-    columns:
-      - name: date_photo
-        description: date the web scraping to collect the data took place
-      - name: category
-        description: broad product category ('Chocolat' by default)
-      - name: subcategory
-        description: product subcategory based on the product name or its URL
-      - name: subcategory2
-        description: detailed product subcategory based on the product name or its URL
-      - name: product_name
-        description: Primary key
-      - name: image_url
-        description: url link of the product image on the website
-      - name: product_url
-        description: url link of the product page
-      - name: product_price
-        description: price of the product, expressed in euro
-      - name: product_weight_g
-        description: weight of the product, expressed in grams
-      - name: brand
-        description: brand of the product
-      - name: company
-        description: company that distributed the product (e-commerce website). 
-          May differ from the brand information.

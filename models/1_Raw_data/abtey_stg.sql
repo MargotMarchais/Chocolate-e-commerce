@@ -20,7 +20,7 @@ WITH base AS (
         regular_price_text,
         product_price,
         weight_grams AS product_weight_g,
-        DENSE_RANK() OVER (PARTITION BY product_name ORDER BY timestamp_photo DESC) AS RANK_SCRAP
+        DENSE_RANK() OVER (PARTITION BY product_name ORDER BY date_photo DESC) AS RANK_SCRAP
     FROM `dbt-chocolate-project.dbt_chocolate_setup.abtey` 
 )
 
