@@ -6,6 +6,7 @@
 
 WITH base AS (
     SELECT DISTINCT
+        CONCAT(product_name, '-', CAST(date_photo AS STRING)) AS ID_scraping,
         timestamp_photo,
         date_photo,
         brand,
@@ -19,6 +20,7 @@ WITH base AS (
 )
 
 SELECT 
+    ID_scraping,
     timestamp_photo,
     date_photo,
     brand,

@@ -6,6 +6,7 @@
 
 WITH base AS (
     SELECT DISTINCT
+        CONCAT(product_name, '-', CAST(date_photo AS STRING)) AS ID_scraping,
         timestamp_photo,
         date_photo,
         product_name, 
@@ -20,6 +21,7 @@ WITH base AS (
 )
 
 SELECT 
+    ID_scraping,
     timestamp_photo,
     date_photo,
     REGEXP_REPLACE(NORMALIZE(product_name, NFD), r"\pM", '') AS product_name,

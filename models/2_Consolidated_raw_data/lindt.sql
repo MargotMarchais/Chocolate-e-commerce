@@ -96,7 +96,8 @@ SELECT
     product_price,
     NULL AS quantity,
     product_weight_g,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("lindt_stg")}} AS base
 )
 
@@ -169,6 +170,7 @@ SELECT
     product_price,
     CAST(quantity AS float64) AS quantity,
     product_weight_g,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM base
 ORDER BY subcategory

@@ -96,7 +96,8 @@ WITH base AS (
         image_url,
         product_price,
         product_weight_g,
-        date_photo
+        date_photo,
+        ID_scraping
     FROM {{ref("franprix_stg")}} 
 )
 
@@ -187,5 +188,6 @@ SELECT
     product_price,
     product_weight_g,
     CAST(quantity AS float64) AS quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM base

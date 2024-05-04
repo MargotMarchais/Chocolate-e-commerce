@@ -183,6 +183,7 @@ SELECT
     product_price,
     product_weight_g,
     CAST(quantity AS float64) AS quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM base
 ORDER BY subcategory

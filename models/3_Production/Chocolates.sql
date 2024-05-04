@@ -11,7 +11,8 @@ SELECT
     product_price,
     product_weight_g,
     quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("jeff_de_bruges")}}
 
 UNION DISTINCT
@@ -27,7 +28,8 @@ SELECT
     product_price,
     product_weight_g,
     quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("alain_ducasse")}}
 
 UNION DISTINCT
@@ -43,7 +45,8 @@ SELECT
     product_price,
     product_weight_g,
     quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("lindt")}}
 
 UNION DISTINCT
@@ -59,7 +62,8 @@ SELECT
     product_price,
     product_weight_g,
     quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("maison_du_chocolat")}}
 
 UNION DISTINCT
@@ -75,7 +79,8 @@ SELECT
     product_price,
     product_weight_g,
     quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("franprix")}}
 -- Franprix dataset contains products not related to chocolate
 WHERE UPPER(brand) NOT IN ('FREEDENT', 'FINI', 'HARIBO', 'TIC TAC', 'CARAMBAR', 
@@ -96,7 +101,8 @@ SELECT
     product_price,
     product_weight_g,
     quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("abtey")}}
 
 UNION DISTINCT
@@ -112,7 +118,8 @@ SELECT
     price_no_reduction AS product_price,
     product_weight_g,
     quantity,
-    date_photo
+    date_photo,
+    ID_scraping
 FROM {{ref("castelain")}}
      
      
