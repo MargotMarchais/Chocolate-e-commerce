@@ -84,9 +84,11 @@ SELECT
 FROM {{ref("franprix")}}
 -- Franprix dataset contains products not related to chocolate
 WHERE UPPER(brand) NOT IN ('FREEDENT', 'FINI', 'HARIBO', 'TIC TAC', 'CARAMBAR', 
-    'HOLLYWOOD', 'AIRWAVES', 'LABEYRIE', 'TETES BRÛLÉES', 'RICOLA', 'VICHY')
+    'HOLLYWOOD', 'AIRWAVES', 'LABEYRIE', 'TETES BRÛLÉES', 'RICOLA', 'VICHY', 'MALABAR', 'KREMA')
     AND UPPER(product_name) NOT LIKE '%BONBON%'
     AND UPPER(product_name) NOT LIKE '%CHEWING%'
+    AND UPPER(product_name) NOT LIKE '%POP%CORN%'
+    AND UPPER(product_name) NOT LIKE '%PASTILLE%'
 
 UNION DISTINCT
 
