@@ -21,6 +21,9 @@ makers and distributors in France, and eventually build a comprehensive dataset 
 - A comprehensive dataset about the French chocolates online market
 - A visual Power BI dashboard
 
+*<b>Go further</b>*
+To learn more about the project, you may read my non technical article here: https://margot-marchais-maurice.webflow.io/chocolate-french-market
+
 *<b>Technical learnings:</b>* I did this project to help me acquire new skills such as:
 build a datawharehouse in GCP Bigquery, automatically feed this DWH with scraped data thanks to a Python script, 
 learn how to use dbt (data transformations, tests and docs generation),... It also made me refresh my web scraping skills (scrapy and requests libraries).
