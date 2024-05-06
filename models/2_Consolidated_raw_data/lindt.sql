@@ -2,7 +2,7 @@
     -- Create product categories and subcategories
     -- Explicit the name of the company
 WITH base AS (
-SELECT 
+SELECT
     'LINDT' AS company,
     'LINDT' AS brand,
     'Chocolat' AS category,
@@ -137,7 +137,7 @@ FROM {{ref("lindt_stg")}} AS base
 )
 
 
-SELECT 
+SELECT DISTINCT
     company,
     brand,
     category,
