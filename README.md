@@ -30,16 +30,14 @@ learn how to use dbt (data transformations, tests and docs generation),... It al
 
 <b>Aperçu du dashboard:</b>
 
-<img width="497" alt="2024-05-05_10h54_14" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/ea87e452-c736-48fe-b7b0-f3fba1fd0fc1">
-<img width="499" alt="2024-05-05_10h54_24" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/3a1bedfe-af30-45b1-851d-4f0091a091ec">
-<img width="500" alt="2024-05-05_10h54_33" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/24ff7a18-6e89-4574-9823-3a21f39b6a13">
-
+<img width="449" alt="2024-05-06_11h58_36" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/8afef720-91af-49b1-bdbd-2d606fff29b1">
+<img width="447" alt="2024-05-06_11h58_45" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/d09f8884-0728-45a4-a6f6-54ff96ddae48">
+<img width="506" alt="2024-05-06_12h39_09" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/9b4aad28-33bc-4190-8543-211e1949cb60">
 
 
 Brands positioning:
 
-<img width="497" alt="2024-05-05_10h55_09" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/31d536d1-209f-4cc5-92c1-6322c97f2127">
-<img width="497" alt="2024-05-05_10h55_51" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/346e160d-5ab9-4b83-bf28-5fe0e50e2b36">
-
+<img width="451" alt="2024-05-06_12h39_36" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/66df8493-448f-46a8-96c0-5f7b0c15c862">
+<img width="450" alt="2024-05-06_11h59_27" src="https://github.com/MargotMarchais/Chocolate-e-commerce/assets/116331323/49dbc481-3ce8-4508-86c2-2d33599c6fef">
 
 
