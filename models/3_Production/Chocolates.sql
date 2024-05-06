@@ -105,7 +105,7 @@ SELECT
     quantity,
     date_photo,
     ID_scraping
-FROM {{ref("abtey")}}
+FROM {{ref("castelain")}}
 
 UNION DISTINCT
 
@@ -122,6 +122,6 @@ SELECT
     quantity,
     date_photo,
     ID_scraping
-FROM {{ref("castelain")}}
+FROM {{ref("abtey")}}
      
      

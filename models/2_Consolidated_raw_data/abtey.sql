@@ -2,11 +2,12 @@
     -- Create product categories and subcategories
     -- Explicit the name of the company
 WITH base AS (
+        
     SELECT 
-        'ABTEY' AS company,
-        'ABTEY' AS brand,
+        'CASTELAIN' AS company,
+        'CASTELAIN' AS brand,
         'Chocolat' AS category,
-       CASE 
+        CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
             WHEN UPPER(product_name) LIKE '%COFFRET%' THEN 'Boites'
             WHEN UPPER(product_name) LIKE '%SACHET%' THEN 'Boites'
@@ -125,26 +126,33 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%CALVADOS%' THEN 'Liqueur'
             ELSE 'Autres'
         END AS subcategory2,
-        product_name, 
-        product_url,
-        image_url,
-        product_price,
-        product_weight_g,
-        NULL AS quantity,
+        timestamp_photo,
         date_photo,
         id_product,
-        product_price_text,
+        product_name, 
+        meta_description,
+        meta_title,	
+        image_url, 
+        on_sale,
+        low_stock_alert,
+        quantity,
+        product_url, 
         has_discount,
-        discount_percentage,
-        discount_amount_text,
-        regular_price,
-        regular_price_text,
-        ID_scraping
+        price_no_reduction,
+        available_for_order,
+        date_update,
+        link_rewrite,
+        format,
+        saveur,
+        teneur_cocoa,
+        product_weight_g,
+        ID_scraping,
+        RANK_SCRAP
+    FROM {{ref("abtey_stg")}}
+    )
 
-    FROM {{ref("abtey_stg")}} 
-)
 
-SELECT 
+SELECT DISTINCT
     company,
     brand,
     category,
@@ -176,7 +184,6 @@ SELECT
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%AMANDE%' THEN 'Fruits secs'
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%NOISETTE%' THEN 'Fruits secs'
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%PISTACHE%' THEN 'Fruits secs'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%CACAHUETE%' THEN 'Fruits secs'
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%MOULAGE%' THEN 'Moulage'
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%OEUF%' THEN 'Moulage'
         WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%PEPITE%' THEN 'Autres'
@@ -214,7 +221,6 @@ SELECT
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%AMANDE%' THEN 'Amandes'
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%NOISETTE%' THEN 'Noisettes'
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%PISTACHE%' THEN 'Pistaches'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%CACAHUETE%' THEN 'Pistaches'
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%MOULAGE%' THEN 'Moulage'
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%OEUF%' THEN 'Oeufs'
         WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%PEPITE%' THEN 'Pépites'
@@ -230,16 +236,19 @@ SELECT
     product_name, 
     product_url,
     image_url,
-    product_price,
     product_weight_g,
     CAST(quantity AS float64) AS quantity,
     date_photo,
-    id_product,
-    product_price_text,
+    on_sale,
+    low_stock_alert,
     has_discount,
-    discount_percentage,
-    discount_amount_text,
-    regular_price,
-    regular_price_text,
+    price_no_reduction,
+    available_for_order,
+    date_update,
+    link_rewrite,
+    format,
+    saveur,
+    teneur_cocoa,
     ID_scraping
 FROM base
+ORDER BY subcategory
