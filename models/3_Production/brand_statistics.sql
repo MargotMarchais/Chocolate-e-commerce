@@ -28,7 +28,7 @@ dom_subcateg AS (
             SELECT 
                 brand, 
                 subcategory,
-                COUNT(*) AS nb_products_subcateg
+                COUNT(DISTINCT product_name) AS nb_products_subcateg
             FROM {{ref('Chocolates')}}
             GROUP BY 1,2
         )
