@@ -124,4 +124,19 @@ SELECT
     ID_scraping
 FROM {{ref("abtey")}}
      
-     
+UNION DISTINCT
+
+SELECT 
+    company,
+    brand,
+    category,
+    subcategory,
+    subcategory2,
+    product_name,
+    product_url,
+    product_price,
+    product_weight_g,
+    quantity,
+    date_photo,
+    ID_scraping
+FROM {{ref("de_neuville")}}

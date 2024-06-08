@@ -204,3 +204,28 @@ models:
       - name: ID_scraping
         description: Primary key
 
+  - name: de Neuville
+    description: Web scraping results (De Neuville website)
+    columns:
+      - name: timestamp_photo
+        description: Timestamp the web scraping took place
+      - name: date_photo
+        description: Date the web scraping took place
+      - name: product_name
+        description: Name of the product
+      - name: company
+        description: name of the website where the data were scraped
+      - name: brand
+        description: brand of the product (Chocolat De Neuville by default)
+      - name: category
+        description: product category (chocolate by default)
+      - name: subcategory
+        description: product subcategory (e.g. "tablettes", "boites", "glaces",..)
+      - name: subcategory2
+        description: product detailes subcategory (e.g. "ballotin", "panière", "coffret",..)
+      - name: image_url
+        description: url link of the product image on the website
+      - name: product_weight
+        description: weight (in grams) of the product
+      - name: ID_scraping
+        description: Primary key
