@@ -2,10 +2,9 @@
     -- Create product categories and subcategories
     -- Explicit the name of the company
 WITH base AS (
-        
     SELECT 
-        'ABTEY' AS company,
-        'ABTEY' AS brand,
+        'DE NEUVILLE' AS company,
+        'DE NEUVILLE' AS brand,
         'Chocolat' AS category,
         CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
@@ -126,129 +125,33 @@ WITH base AS (
             WHEN UPPER(product_name) LIKE '%CALVADOS%' THEN 'Liqueur'
             ELSE 'Autres'
         END AS subcategory2,
-        timestamp_photo,
-        date_photo,
-        id_product,
         product_name, 
-        meta_description,
-        meta_title,	
-        image_url, 
-        on_sale,
-        low_stock_alert,
-        quantity,
-        product_url, 
-        has_discount,
-        price_no_reduction,
-        available_for_order,
-        date_update,
-        link_rewrite,
-        format,
-        saveur,
-        teneur_cocoa,
+        NULL AS product_url,
+        NULL AS image_url,
+        product_price,
         product_weight_g,
-        ID_scraping,
-        RANK_SCRAP
-    FROM {{ref("abtey_stg")}}
-    )
+        NULL AS quantity,
+        NULL AS rating,
+        product_description,
+        date_photo,
+        ID_scraping
+    FROM {{ref("de_neuville_stg")}} 
+)
 
-
-SELECT DISTINCT
+SELECT 
     company,
     brand,
     category,
-    CASE 
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BO_TE%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%COFFRET%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%SACHET%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BALLOTIN%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%GANACHES%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%POT%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%CORNET%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BARQUETTE%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%PANIERE%' THEN 'Boites'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%TABLETTE%' THEN 'Tablettes'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BARRE%' THEN 'Tablettes'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%ECORCE%' THEN 'Tablettes'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%_TUI%' THEN 'Tablettes'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%SORBET%' THEN 'Glaces'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%CR_ME%GLAC_E%' THEN 'Glaces'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%SUCETTE%' THEN 'Sucreries'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%MARSHMALLOW%' THEN 'Sucreries'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%OURS%GUIMAUVE%' THEN 'Sucreries'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BILLE%' THEN 'Sucreries'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%CALISSON%' THEN 'Biscuits'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%MENDIANT%' THEN 'Biscuits'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%BISCUIT%' THEN 'Biscuits'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%P_TE%TARTINER%' THEN 'Petit déjeuner'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%CARR_MAISON%' THEN 'Pâtisserie'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%AMANDE%' THEN 'Fruits secs'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%NOISETTE%' THEN 'Fruits secs'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%PISTACHE%' THEN 'Fruits secs'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%MOULAGE%' THEN 'Moulage'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%OEUF%' THEN 'Moulage'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%PEPITE%' THEN 'Autres'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%NOUGAT%' THEN 'Autres'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%TRUFFES%' THEN 'Autres'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%CALENDRIER%' THEN 'Collection spéciale'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%NOEL%' THEN 'Collection spéciale'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%VALENTIN%' THEN 'Collection spéciale'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%PAQUES%' THEN 'Collection spéciale'
-        WHEN subcategory = 'Autres' AND UPPER(product_url) LIKE '%MUGUET%' THEN 'Collection spéciale'
-        ELSE subcategory
-    END AS subcategory,
-    CASE 
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%BO_TE%' THEN 'Boite'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%COFFRET%' THEN 'Coffret'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%SACHET%' THEN 'Sachet'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%BALLOTIN%' THEN 'Ballotin'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%GANACHES%' THEN 'Ganache'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%POT%' THEN 'Pot'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%CORNET%' THEN 'Cornet'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%TABLETTE%' THEN 'Tablette'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%BARRE%' THEN 'Barre'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%ECORCE%' THEN 'Ecorce'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%_TUI%' THEN 'Etui'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%SORBET%' THEN 'Sorbet'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%CR_ME%GLAC_E%' THEN 'Crème glacée'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%SUCETTE%' THEN 'Sucette'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%MARSHMALLOW%' THEN 'Marshmallows'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%OURS%GUIMAUVE%' THEN 'Ours guimauve'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%CALISSON%' THEN 'Calisson'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%MENDIANT%' THEN 'Mendiant'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%BISCUIT%' THEN 'Biscuit'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%P_TE%TARTINER%' THEN 'Pâte à tartiner'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%CARR_MAISON%' THEN 'Carré maison'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%AMANDE%' THEN 'Amandes'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%NOISETTE%' THEN 'Noisettes'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%PISTACHE%' THEN 'Pistaches'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%MOULAGE%' THEN 'Moulage'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%OEUF%' THEN 'Oeufs'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%PEPITE%' THEN 'Pépites'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%NOUGAT%' THEN 'Nougat'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%TRUFFES%' THEN 'Truffes'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%CALENDRIER%' THEN 'Calendrier avent'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%NOEL%' THEN 'Noël'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%VALENTIN%' THEN 'Saint-Valentin'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%PAQUES%' THEN 'Pâques'
-        WHEN subcategory2 = 'Autres' AND UPPER(product_url) LIKE '%MUGUET%' THEN 'Muguet'
-        ELSE subcategory2
-    END AS subcategory2,
+    subcategory,
+    subcategory2,
     product_name, 
-    product_url,
-    image_url,
+    'Inconnu' AS product_url,
+    'Inconnu' AS image_url,
+    product_price,
     product_weight_g,
     CAST(quantity AS float64) AS quantity,
+    CAST(rating AS float64) AS rating,
+    product_description,
     date_photo,
-    on_sale,
-    low_stock_alert,
-    has_discount,
-    price_no_reduction,
-    available_for_order,
-    date_update,
-    link_rewrite,
-    format,
-    saveur,
-    teneur_cocoa,
     ID_scraping
 FROM base
-ORDER BY subcategory

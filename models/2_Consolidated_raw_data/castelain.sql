@@ -3,8 +3,8 @@
     -- Explicit the name of the company
 WITH base AS (
     SELECT 
-        'ABTEY' AS company,
-        'ABTEY' AS brand,
+        'CASTELAIN' AS company,
+        'CASTELAIN' AS brand,
         'Chocolat' AS category,
        CASE 
             WHEN UPPER(product_name) LIKE '%BO_TE%' THEN 'Boites'
